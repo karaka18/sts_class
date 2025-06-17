@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<!-- target 객체 -->
+	<bean id="calcTarget"  class="com.itwillbs.aop.MyCalculator"/>
+	<!-- advice 객체(보조기능) -->
+	<bean id="logAdvice"  class="com.itwillbs.aop.LoggingAdvice"/>
+	
+	<!-- 주기능을 대신 수행하는 객체(+보조기능) -->
+	<bean id="proxyCal"
+		  class="org.springframework.aop.framework.ProxyFactoryBean">
+		  
+		  <property name="target" ref="calcTarget"/>
+		  <property name="intercepterNames">
+		  	<list>
+		  		<value>logAdvice</value>
+		  	</list>
+		  </property>
+		  
+	</bean>
+	
+	
+
+
+</beans>
