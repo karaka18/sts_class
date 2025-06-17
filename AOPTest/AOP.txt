@@ -1,0 +1,17 @@
+AOP.txt
+
+관점지향 프로그래밍(AOP, Aspect Oriented Programming)
+ => 개발자가 수행해야하는 동작을 주기능 / 보조기능으로 분리후
+ 	주 기능개발에 집중하도록 보조기능을 구현하는 기능
+ 	
+ 	주기능 => 사용자의 요구사항
+ 	보조기능 => 로깅(로그출력), 트랜잭션, 예외처리, 보안처리
+ 	
+* AOP 관련용어
+ - aspect : 구현하고자 하는 보조기능
+ - advice : aspect의 실제 구현체(클래스) / 메서드 호출기준으로 여러지점 호출가능
+ - joinpoint : advice를 적용하는 지점(스프링에선 메서드결합점만 제공)
+ - pointcut : advice가 적용되는 대상을 지정
+ - target : advice가 적용되는 클래스
+ - weaving : advice를 주기능에 적용하는 것
+ 
